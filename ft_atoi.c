@@ -39,13 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (number);
 }
-
-/*
-int	main(void)
-{
-	char	num[] = "    -2147483648";
-
-	printf("%i\n", ft_atoi(num));
-	printf("manual: %i\n", atoi(num));
-}
-*/

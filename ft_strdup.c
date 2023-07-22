@@ -24,13 +24,3 @@ char	*ft_strdup(const char *s1)
 	ft_strlcpy(ptr, s1, nbytes);
 	return (ptr);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "Hello World 42";
-
-	printf("ptr: %p, cpy: %s, s1 ptr: %p\n", ft_strdup(str), ft_strdup(str), str);
-	printf("ptr: %p, cpy: %s, s1 ptr: %p\n", strdup(str), strdup(str), str);
-}
-*/

@@ -21,25 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	if (s[i] == (char) c)
 		return ((char *) &(s[i]));
-	i--;
-	while (i >= 0)
+	while (i > 0)
 	{
+		i--;
 		if (s[i] == (char) c)
 			return ((char *) &(s[i]));
-		i--;
 	}
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "Hello World 42";
-	int	chr = 'l';
-
-	printf("%p\n", ft_strrchr(str, chr));
-	printf("%c\n", *ft_strrchr(str, chr));
-	printf("%p\n", strrchr(str, chr));
-	printf("%p\n", &str[9]);
-}
-*/

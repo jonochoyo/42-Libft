@@ -6,11 +6,29 @@
 /*   By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:30:30 by jchoy-me          #+#    #+#             */
-/*   Updated: 2023/07/11 14:30:34 by jchoy-me         ###   ########.fr       */
+/*   Updated: 2023/07/17 16:32:35 by jchoy-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+DESCRIPTION:
+Applies the function ’f’ to each character of the string ’s’, and passing its 
+index as first argument to create a new string (with malloc(3)) resulting
+from successive applications of ’f’.
+
+PARAMETERS:
+s:	The string on which to iterate.
+f:	The function to apply to each character.
+
+RETURN VALUE:
+The string created from the successive applications of ’f’.
+Returns NULL if the allocation fails.
+
+EXTERNAL FUNCTIONS:
+malloc
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -29,21 +47,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	dest[i] = '\0';
 	return (dest);
 }
-
-/*
-char	func_to_upper(unsigned int i, char c)
-{
-	if ('a' <= c && c <= 'z')
-		return (c - 32);
-	(void) i;
-	return (c);
-}
-
-int	main(void)
-{
-	char	str[] = "hello";
-
-	void	*f = &func_to_upper;
-	printf("%s\n", ft_strmapi(str, f));
-}
-*/

@@ -16,19 +16,3 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "Hello";
-	int	i;
-
-	i = 0;
-	ft_bzero(str, 3);
-	while (i < 5)
-	{
-		printf("%c\n", str[i]);
-		i++;
-	}
-}
-*/

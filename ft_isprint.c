@@ -16,13 +16,3 @@ int	ft_isprint(int c)
 {
 	return (32 <= c && c <= 126);
 }
-
-/*
-int	main(void)
-{
-	printf("%i\n", ft_isprint(' '));
-	printf("%i\n", ft_isprint('0'));
-	printf("%i\n", ft_isprint('\t'));
-	printf("%i\n", ft_isprint(127));
-}
-*/

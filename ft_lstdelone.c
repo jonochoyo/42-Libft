@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 14:30:41 by jchoy-me          #+#    #+#             */
-/*   Updated: 2023/07/17 16:32:27 by jchoy-me         ###   ########.fr       */
+/*   Created: 2023/07/20 11:42:54 by jchoy-me          #+#    #+#             */
+/*   Updated: 2023/07/20 14:39:34 by jchoy-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 /*
 DESCRIPTION:
-Applies the function ’f’ on each character of the string passed as argument, 
-passing its index as first argument.  Each character is passed by address 
-to ’f’ to be modified if necessary.
+Takes as a parameter a node and frees the memory of the node’s content using 
+the function ’del’ given as a parameter and free the node. The memory of
+’next’ must not be freed.
 
 PARAMETERS:
-s:	The string on which to iterate.
-f:	The function to apply to each character.
+lst:	The node to free.
+del:	The address of the function used to delete the content.
+
+EXTERNAL FUNCTIONS:
+free
 */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		f(i, &(s[i]));
-		i++;
-	}
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

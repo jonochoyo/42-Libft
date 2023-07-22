@@ -6,11 +6,29 @@
 /*   By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:29:37 by jchoy-me          #+#    #+#             */
-/*   Updated: 2023/07/12 16:03:51 by jchoy-me         ###   ########.fr       */
+/*   Updated: 2023/07/17 16:32:53 by jchoy-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+DESCRIPTION:
+Allocates (with malloc(3)) and returns a substring from the string ’s’.
+The substring begins at index ’start’ and is of maximum size ’len’.
+
+PARAMETERS:
+s:		The string from which to create the substring.
+start:	The start index of the substring in the string ’s’.
+len:	The maximum length of the substring.
+
+RETURN VALUE:
+The substring.
+NULL if the allocation fails.
+
+EXTERNAL FUNCTIONS:
+malloc
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -19,11 +37,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	strsize;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	strsize = ft_strlen(s);
-	if (len > strsize)
-		len = strsize;
+	if (len > strsize - start)
+		len = strsize - start;
+	if (start > strsize)
+		len = 0;
 	sbstr = (char *) malloc(sizeof(char) * (len + 1));
-	if (sbstr == NULL || s == NULL)
+	if (sbstr == NULL)
 		return (NULL);
 	while (i < len && s[start + i] != '\0' && start < strsize)
 	{
@@ -33,13 +55,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sbstr[i] = '\0';
 	return (sbstr);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "hello";
-
-	printf("%s\n", ft_substr(str, 100, 3));
-	printf("%s\n", ft_substr(str, 3, 2));
-}
-*/

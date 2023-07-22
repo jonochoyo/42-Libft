@@ -16,12 +16,3 @@ int	ft_isascii(int c)
 {
 	return (0 <= c && c <= 127);
 }
-
-/*
-int	main(void)
-{
-	printf("%i\n", ft_isascii('\0'));
-	printf("%i\n", ft_isascii('/'));
-	printf("%i\n", ft_isascii(128));
-}
-*/

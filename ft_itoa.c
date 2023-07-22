@@ -6,11 +6,27 @@
 /*   By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:30:19 by jchoy-me          #+#    #+#             */
-/*   Updated: 2023/07/11 14:30:20 by jchoy-me         ###   ########.fr       */
+/*   Updated: 2023/07/17 16:32:16 by jchoy-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+DESCRIPTION:
+Allocates (with malloc(3)) and returns a string representing the integer 
+received as an argument. Negative numbers must be handled.
+
+PARAMETERS:
+n:	the integer to convert.
+
+RETURN VALUE:
+The string representing the integer.
+NULL if the allocation fails.
+
+EXTERNAL FUNCTIONS:
+malloc
+*/
 
 static int	ft_get_size(int nb)
 {
@@ -54,12 +70,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*
-int	main(void)
-{
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(2147483647));
-}
-*/

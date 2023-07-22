@@ -35,15 +35,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	const char	hay[] = "Hello World 42";
-	const char	need[] = "World";
-	char		size = 13;
-
-	printf("%s\n", ft_strnstr(hay, need, size));
-	printf("%s\n", strnstr(hay, need, size));
-}
-*/

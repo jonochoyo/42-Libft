@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 14:26:22 by jchoy-me          #+#    #+#             */
-/*   Updated: 2023/07/11 18:50:33 by jchoy-me         ###   ########.fr       */
+/*   Created: 2023/07/19 11:34:44 by jchoy-me          #+#    #+#             */
+/*   Updated: 2023/07/20 13:00:16 by jchoy-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
+/*
+DESCRIPTION:
+Adds the node ’new’ at the beginning of the list.
 
-	i = 0;
-	if (dstsize > 0)
-	{
-		while (src[i] != '\0' && i < dstsize - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (ft_strlen(src));
+PARAMETERS:
+lst:	The address of a pointer to the first link of a list.
+new:	The address of a pointer to the node to be added to the list.
+*/
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

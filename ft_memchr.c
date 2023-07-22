@@ -27,17 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "Hello World 42";
-	int	ltr = '4';
-	size_t	size = 15;
-
-	printf("%p\n", ft_memchr(str, ltr, size));
-	printf("%c\n", *(char *)ft_memchr(str, ltr, size));
-	printf("%p\n", memchr(str, ltr, size));
-	printf("%p\n", &str[12]);
-}
-*/

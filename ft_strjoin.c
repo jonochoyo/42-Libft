@@ -12,6 +12,23 @@
 
 #include "libft.h"
 
+/*
+DESCRIPTION:
+Allocates (with malloc(3)) and returns a new string, which is the result of 
+the concatenation of ’s1’ and ’s2’.
+
+PARAMETERS:
+s1:	The prefix string.
+s2:	The suffix string.
+
+RETURN VALUE:
+The new string.
+NULL if the allocation fails.
+
+EXTERNAL FUNCTIONS:
+malloc
+*/
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;
@@ -27,15 +44,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(dest, s2, nbytes);
 	return (dest);
 }
-
-/*
-int	main(void)
-{
-	char	*str1 = NULL;
-	char	str2[] = "Hello";
-	char	str3[] = "World";
-
-	printf("%s\n", ft_strjoin(str1, str2));
-	printf("%s\n", ft_strjoin(str2, str3));
-}
-*/

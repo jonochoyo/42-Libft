@@ -16,13 +16,3 @@ int	ft_isalpha(int c)
 {
 	return (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'));
 }
-
-/*
-int	main(void)
-{
-	printf("%i\n", ft_isalpha('T'));
-	printf("%i\n", ft_isalpha('a'));
-	printf("%i\n", ft_isalpha('9'));
-	printf("%i\n", ft_isalpha(' '));
-}
-*/

@@ -27,15 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) &(s[i]));
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	char	str[] = "Hello World 42";
-	int	chr = 'o';
-
-	printf("%p\n", ft_strchr(str, chr));
-	printf("%c\n", *ft_strchr(str, chr));
-	printf("%p\n", strchr(str, chr));
-}
-*/

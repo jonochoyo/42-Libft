@@ -6,7 +6,7 @@
 #    By: jchoy-me <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 14:51:05 by jchoy-me          #+#    #+#              #
-#    Updated: 2023/07/11 17:14:00 by jchoy-me         ###   ########.fr        #
+#    Updated: 2023/07/21 14:56:06 by jchoy-me         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,19 +51,38 @@ SRCS = ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS_SRCS = ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
+
 OBJS = $(SRCS:%.c=%.o)
 
-# Targets
-$(NAME):
-		$(CC) $(CFLAGS) -c $(SRCS) -I./
-		ar -rc $(NAME) $(OBJS)
+BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
 
+# Targets
 all: $(NAME)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(NAME): $(OBJS)
+		ar -rcs $(NAME) $(OBJS)
+
+bonus: $(OBJS) $(BONUS_OBJS)
+		ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
 clean: 
-		rm -f $(OBJS)
+		rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 		rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: bonus clean fclean re

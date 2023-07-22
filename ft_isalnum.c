@@ -16,12 +16,3 @@ int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) + ft_isdigit(c));
 }
-
-/*
-int	main(void)
-{
-	printf("%i\n", ft_isalnum('z'));
-	printf("%i\n", ft_isalnum('9'));
-	printf("%i\n", ft_isalnum(' '));
-}
-*/
