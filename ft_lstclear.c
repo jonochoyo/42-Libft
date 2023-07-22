@@ -40,33 +40,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
-/*
-void delete(void *data)
-{
-	free(data);
-}
-
-int	main(void)
-{
-	t_list	*node1;
-	t_list	*node2;
-	int	data;
-	int	data2;
-
-	data = 42;
-	data2 = 24;
-	node1 = ft_lstnew(&data);
-	node2 = ft_lstnew(&data2);
-
-	ft_lstadd_back(&node1, node2);
-
-	printf("Node content is: %i\n", *(int *)node1 -> content);
-	printf("Node content is: %i\n", *(int *)node2 -> content);
-
-	ft_lstclear(&node1, delete);
-
-	printf("Node content after delete is: %i\n", *(int *)node2 -> content);
-	printf("Node content after delete is: %i\n", *(int *)node1 -> content);
-}
-*/
