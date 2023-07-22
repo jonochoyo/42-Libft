@@ -7,7 +7,7 @@ A collection of functions that will be a useful tool for the 42 cursus.
 | Program name:       | libft.a                     |
 | --------------------|-----------------------------|
 | Turn in files:      | Makefile, libft.h, ft_*.c   |
-| Makefile:           | NAME, all, clean, clean, re |
+| Makefile:           | NAME, all, clean, fclean, re |
 | External functions: | Detailed on each part       |
 | Description:        | Write your own C library    |
 
