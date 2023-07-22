@@ -28,5 +28,5 @@ To implement the two following functions, we can use malloc( ):
 In this second part, we must develop a set of functions that are either not in the libc library or are part of it but in a different form.
 
 ### Bonus Part - Linked List functions
-We need to write a set of functions that help us to manipulate lists. 
-In the Makefile, we need to add a make bonus rule to add the bonus functions to the libft.a
+We need to write a set of functions that help us to manipulate lists.  
+In the Makefile, we need to add a make bonus rule to add the bonus functions to libft.a
